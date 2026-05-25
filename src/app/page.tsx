@@ -1,26 +1,19 @@
 import Image from "next/image";
-import PokemonList from "./components/list";
+import List from "../components/list";
+import SearchBar from "../components/searchbar"; 
 
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start">
-        <h1 className="max-w-xs text-3xl font-bold tracking-tight text-black dark:text-zinc-50"          
-        >
+        <h1 className="max-w-xs text-3xl font-bold tracking-tight text-black dark:text-zinc-50">
           Pokedex
         </h1>
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <ul role="list" className="flex flex-col gap-4 text-lg font-medium">
-            <li className="flex justify-between items-center gap-2">
-              <div>
-              <p>🌱</p>
-              </div>              
-              <div className="flex-auto">
-                <p>Bulbasaur</p>
-                <p>Grass</p>
-              </div>
-            </li>
-          </ul>            
+        <div>
+          <SearchBar/>
+        </div>
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">          
+            <List/>           
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
