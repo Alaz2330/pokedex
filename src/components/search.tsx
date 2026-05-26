@@ -7,19 +7,17 @@ import { useState } from "react";
 
 export default function Search() {
     const [searchResult, setSearchResult] = useState();
-    if (searchResult == undefined) {
-        let content = <List/>
-    } else {
-        let content = <Card pokemon={searchResult} />
-    }
-
+    console.log(searchResult);
     return(
         <div>
         <div>
             <SearchBar onSearchResult={setSearchResult}/>
         </div>
-        <div>
-            
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+            {!searchResult 
+            ? <List/> 
+            : <Card pokemon={searchResult} />
+            }
         </div>
         </div>
     )

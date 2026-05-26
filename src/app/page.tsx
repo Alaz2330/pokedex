@@ -1,6 +1,5 @@
 import Image from "next/image";
-import List from "../components/list";
-import SearchBar from "../components/searchbar"; 
+import Search from "../components/search";
 
 export default function Home() {
   return (
@@ -10,10 +9,7 @@ export default function Home() {
           Pokedex
         </h1>
         <div>
-          <SearchBar/>
-        </div>
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">          
-            <List/>           
+          <Search/>  
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a

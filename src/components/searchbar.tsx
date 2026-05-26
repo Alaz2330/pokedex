@@ -1,14 +1,21 @@
 'use client'
-export default function SearchBar({onSearchResult}) {
-  
+
+interface SearchBarProps{
+  onSearchResult: Function
+}
+export default function SearchBar({onSearchResult}:SearchBarProps) {
   async function handleSearch(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const nameOrId = formData.get('query');
-    const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${nameOrId}/`);
-    const pokemon = await data.json();
-    onSearchResult(pokemon);
+    if (nameOrId){
+      const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${nameOrId}/`);
+      const pokemon = await data.json();
+      onSearchResult(pokemon);
+    }else {
+      onSearchResult();
+    }
   }
   return (
     <div>
