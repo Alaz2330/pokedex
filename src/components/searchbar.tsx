@@ -3,16 +3,17 @@
 interface SearchBarProps{
   onSearchResult: Function
 }
+
 export default function SearchBar({onSearchResult}:SearchBarProps) {
-  async function handleSearch(e) {
+  function handleSearch(e) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const nameOrId = formData.get('query');
     if (nameOrId){
-      const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${nameOrId}/`);
-      const pokemon = await data.json();
-      onSearchResult(pokemon);
+      // const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${nameOrId}/`);
+      // const pokemon = await data.json();
+      onSearchResult(nameOrId);
     }else {
       onSearchResult();
     }
