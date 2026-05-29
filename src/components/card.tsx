@@ -15,16 +15,18 @@ export default function Card({name}) {
         <div className="md:max-2xl border rounded-lg">            
             {!pokemon 
                 ?<p> Loading</p> 
-                :<div className="grid grid-cols-[50%_50%] gap-4">                    
+                :<div className="grid grid-cols-[40%_50%] gap-4">                    
                     <img src={pokemon.sprites.front_default} className="w=full h-auto"/>
                     <div>
-                        <h2 className="uppercase">{pokemon.name}</h2>
+                        <h2 className="uppercase font-medium">{pokemon.name}</h2>
                         <ul>
                             <div className="grid grid-cols-2">
                                 {pokemon.types.map(({type}) => (
                                     <li key={type.name}>
-                                            <img src={`/type_icons/${type.name}.svg`} className="w-1/9"/>
+                                        <div>                                
+                                            <img src={`/type_icons/${type.name}.svg`} className="w-1/4"/>
                                             <p> {type.name}</p>
+                                        </div>
                                     </li>
                                 ))}
                             </div>

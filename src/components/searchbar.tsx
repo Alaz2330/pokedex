@@ -26,8 +26,7 @@ export default function SearchBar({onSearchResult}:SearchBarProps) {
           type="search"
           id="search-input"
           placeholder="Type a name or an id for search"
-          name="query"
-          className=""          
+          name="query"          
           />
           <button type="submit">Search</button>
         </form>        
