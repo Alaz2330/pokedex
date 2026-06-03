@@ -19,16 +19,17 @@ export default function SearchBar({onSearchResult}:SearchBarProps) {
     }
   }
   return (
-    <div>
-        <form onSubmit={handleSearch} className="flex flex-row gap-2">
-          <label htmlFor="search-input" className="sr-only">Search by id or name</label>          
+    <div className="flex justify-end mt-8">
+        <form onSubmit={handleSearch} className="flex flex-row gap-2 bg-neutral-800 rounded-2xl hover:bg-neutral-600">
+          <label htmlFor="search-input" className="sr-only text-neutral-400">Search by id or name</label>          
           <input 
           type="search"
           id="search-input"
-          placeholder="Type a name or an id for search"
-          name="query"          
+          placeholder="Catch 'em all"
+          name="query"     
+          className="text-neutral-400 py-3 px-5 rounded-2xl  focus:outline-none"     
           />
-          <button type="submit">Search</button>
+          <button type="submit" className="text-neutral-400">Search</button>
         </form>        
     </div>
   )

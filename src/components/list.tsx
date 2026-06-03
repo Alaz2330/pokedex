@@ -32,9 +32,9 @@ export default function List({result}:ListProps) {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-6 text-center sm:items-start sm:text-left">      
+    <div className="flex flex-col justify-center items-center text-center sm:items-start sm:text-left">      
     {!result 
-      ?<ul className= "w-full divide-y-2 divide-gray-50">      
+      ?<ul className= "w-full divide-y-2 divide-gray-50 mt-8">      
         <div className="grid md:grid-cols-3 gap-6">
           {pokemones.results.map((singular) => (
             <li key={singular.name} className="flex justify-center">  

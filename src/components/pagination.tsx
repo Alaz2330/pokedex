@@ -52,15 +52,18 @@ export default function Pagination({pagination, setPagination}: PaginationProps)
 
     function MoveByNumbers(page){
         const nextOffset = (page-1)*pagination.pageLimit
-        setPagination((prev) => ({
-            ...prev,
-            offset: nextOffset
-        }))
-        setPageVariables((prev: PageVariables) => {
-            return {
+
+        if (page != pageVariables.actualPage) {
+            setPagination((prev) => ({
                 ...prev,
-            actualPage: page
-        }}) 
+                offset: nextOffset
+            }))
+            setPageVariables((prev: PageVariables) => {
+                return {
+                    ...prev,
+                actualPage: page
+            }}) 
+        }
     };
 
     function MoveToFirst(){
@@ -126,8 +129,8 @@ export default function Pagination({pagination, setPagination}: PaginationProps)
     }
 
     return(
-        <div className="flex gap-2 justify-center mt-4">
-        <div className="grid grid-cols-6">
+        <div className="flex w-full gap-2 justify-center mt-6">
+        <div className="grid grid-cols-8 text-neutral-400">
             {pageVariables.actualPage === 1
             ? <button type="button" className="text-gray-500">First</button>
             : <button type="button" onClick={MoveToFirst}>First</button>
