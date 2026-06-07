@@ -112,7 +112,6 @@ export default function Pagination({pagination, setPagination}: PaginationProps)
         const nearTheEnd = pageVariables.pagesList.length - pageVariables.actualPage;
         const list = pageVariables.pagesList.slice(pageVariables.actualPage-1, (pageVariables.actualPage+3));
         const listNearTheEnd = pageVariables.pagesList.slice(pageVariables.pagesList.length-4, (pageVariables.actualPage+3));
-        console.log(pageVariables.pagesList)
         if (nearTheEnd <= 4){
             setPageVariables((prev: PageVariables) => {
             return {

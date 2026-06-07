@@ -32,7 +32,7 @@ export default function Card({name}) {
                                     <li key={type.name}>
                                         <div className="flex flex-row gap-2">                                
                                             <img src={`/type_icons/${type.name}.svg`} className="w-1/4"/>
-                                            <p className="text-neutral-400"> {type.name}</p>
+                                            <p className="text-neutral-400 capitalize"> {type.name}</p>
                                         </div>
                                     </li>
                                 ))}
