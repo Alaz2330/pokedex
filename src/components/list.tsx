@@ -38,9 +38,7 @@ export default function List({result}:ListProps) {
         <div className="grid md:grid-cols-3 gap-6">
           {pokemones.results.map((singular) => (
             <li key={singular.name} className="flex justify-center">  
-                <div className="flex">
                   <Card name={singular.name}/>
-                </div>
             </li>
           ))}
         </div>

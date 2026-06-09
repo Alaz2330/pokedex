@@ -25,19 +25,15 @@ export default function Detail({data}) {
             {!pokemon 
                 ?<p> Loading</p>      
                 :<div className="grid grid-cols-2 w-full "> 
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col justify-center items-center">
                         <h2 className="text-center font-bold"> #{pokemon.id}</h2> 
                         <img src={pokemon.sprites.other['official-artwork'].front_default} className="w-1/3"/>
-                        <h2 className="text-center font-bold capitalize">{pokemon.name}</h2>
-                        <ul className="w-full">
-                            <div className="grid grid-cols-2">
-                                {pokemon.types.map(({type}) => (
-                                    <li key={type.name}>
-                                        <Types name= {type.name}/>
-                                        </li>
-                                ))}
-                            </div>    
-                        </ul>
+                        <h2 className="text-center font-bold capitalize">{pokemon.name}</h2>                        
+                        <div className="flex flex-row w-1/3 ">
+                            {pokemon.types.map(({type}) => (
+                                <Types key={type.name} name={type.name}/>
+                            ))}
+                        </div>                            
                     </div>
                     <ul className="w-full">
                     {pokemon.stats.map((singular)=>(
